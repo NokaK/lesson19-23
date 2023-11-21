@@ -1,0 +1,12 @@
+ul {
+  list-style: none;
+}
+
+.clicked {
+  background-color: green;
+  width: 200px;
+}
+.click {
+  background-color: red;
+  width: 500px;
+}

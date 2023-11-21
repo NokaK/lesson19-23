@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id nisi fugit enim eos accusamus expedita sint quibusdam
+        fugiat quas dolores consectetur consequatur hic explicabo aut, ipsum repellat dolorem magni quam!</p>
+
+    <p id="text" class="text"></p>
+    <ul id="blog-section">
+
+    </ul>
+    <button id="button">click me</button>
+
+    <script>
+        // console.log(document)
+        const p = document.getElementsByTagName("p")[0]
+        const p1 = document.querySelector("p")
+        const text = document.getElementById("text")
+        const text1 = document.getElementsByClassName("text")
+        text.style.color = "red";
+        text.textContent = "Hello World"
+
+        const h2 = document.createElement("h2")
+        h2.textContent = "This is title h2"
+
+        const blogSection = document.getElementById("blog-section")
+        blogSection.appendChild(h2)
+
+
+
+        const numbers = [1, 2, 3, 4]
+
+        const studentsArray = [
+            {
+                name: "John",
+                age: 30,
+                src: "https://picsum.photos/200/300"
+            },
+            {
+                name: "Ann",
+                age: 20,
+                src: "https://picsum.photos/200/300"
+            },
+            {
+                name: "Jane",
+                age: 17,
+                src: "https://picsum.photos/200/300"
+            },
+        ];
+        for (let index = 0; index < studentsArray.length; index++) {
+            const element = studentsArray[index];
+            console.log(element)
+
+            const li = document.createElement("li")
+            li.textContent = `${element.name} is ${element.age} years old`
+
+            const img = document.createElement("img")
+            img.src = element.src
+            // img.setAttribute("src", element.src)
+            li.appendChild(img)
+
+            // li.innerHTML = `<div><span>${element.name} is ${element.age} years old </span><img src="${element.src}" alt=""> </div>`
+            blogSection.appendChild(li)
+
+        }
+
+        const button = document.getElementById("button")
+        button.addEventListener("click", function () {
+            if (button.textContent === "click me") {
+                button.textContent = "clicked";
+
+                button.classList.add("click")
+                button.classList.remove("clicked")
+            } else {
+                button.textContent = "click me";
+                // button.style.backgroundColor = "green";
+                // button.style.width = "200px";
+                button.classList.add("clicked")
+                button.classList.remove("click")
+            }
+        })
+
+
+    </script>
+</body>
+
+</html>
